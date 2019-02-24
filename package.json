@@ -1,0 +1,27 @@
+{
+  "name": "vue-blog",
+  "version": "1.0.0",
+  "description": "My outstanding Nuxt.js project",
+  "author": "Y-Aron",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "cross-env": "^5.2.0",
+    "highlight": "^0.2.4",
+    "mavon-editor": "^2.6.17",
+    "mermaid": "^8.0.0",
+    "nuxt": "^2.4.0",
+    "vue-i18n": "^8.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}

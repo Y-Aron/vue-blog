@@ -1,0 +1,118 @@
+@charset "utf-8";
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+.app-header-nav { width: 96% }
+#app-nav-list li a { padding: 0 10px; }
+#app-nav-list li.menu:before { right: 0 }
+.special-topic li { width: 27% }
+.app-search { width: 96%}
+.box, article { width: 96% }
+.fader .slide img { height: 320px }
+.links li { width: 100%; text-align: left }
+.jianzhan li section { margin: 0 5px; }
+.jianzhan li:nth-child(1) { width: 30% }
+.jianzhan li:nth-child(3) { width: 36.3% }
+}
+@media screen and (max-width: 1023px) {
+/*#app-header*/
+#app-header { position: fixed; z-index: 999 }
+#app-nav { width: 100%; height: auto; background: rgba(0,0,0,0.5); margin-top: 18px; position: fixed; z-index: 999; top: 42px; }
+#app-header .app-header-search { position: absolute; top: 6px; right: 10px; }
+.app-search .search { width: 80% }
+.app-header-nav { width: 100% }
+.app-search { width: 100%; position: fixed; top: 50px; z-index: 99; background: rgba(0,0,0,.8); }
+#app-header .logo { margin-left: 0; line-height: 56px; float: none; text-align: center; margin-right: 0; }
+#app-min-nav { overflow: hidden; position: absolute; }
+#app-min-nav { display: block; }
+#app-nav-list { display: none; width: 100%;/* top: 30px; */ }
+#app-nav-list li { width: 55%; text-align: center; background: #12b7de; float: none; display: block; font-weight: bold; }
+#app-nav-list li:last-child { padding-bottom: 100% }
+#app-nav-list li a { color: #fff; display: block; width: 100%; text-align: center; float: none; padding: 0; background: #12b7de; border-bottom: #49ccea 1px solid; }
+#app-nav-list ul.sub { display: block; position: inherit; left: inherit; top: inherit; }
+#app-nav-list ul.sub li { width: 100% }
+#app-nav-list ul.sub li:last-child { padding-bottom: 0; border-bottom: #49ccea 1px solid; }
+#app-nav-list ul.sub li a { color: #fff; font-weight: normal; border-bottom: none; }
+#app-nav-list ul.sub li a:hover, #app-nav-list li:hover a, #app-nav-list #selected { color: #fff; }
+#app-nav-list .menu span { display: block; width: 50px; height: 50px; background: #12b7de; opacity: 0.5; position: absolute; top: 0; right: 0; border-left: #49ccea 1px solid; }
+#app-nav-list .menu:before { right: 20px; }
+/**/
+.box, article { width: 96% }
+article { padding-top: 80px; }
+#article-nav { display: none }
+.left-container { width: 100%; margin-left: 0 }
+.right-container { display: none }
+.qq_join li section { margin: 0 10px }
+.jianzhan li section { margin: 0 5px; }
+.jianzhan li:nth-child(1) { width: 30% }
+.jianzhan li:nth-child(3) { width: 36.3% }
+.special-topic li { width: 27%; }
+}
+ @media only screen and (max-width: 768px) {
+.special-topic li { padding: 15px; }
+.blog-item-images a img { width: 96% }
+.xinlu li a { padding: 5px; margin: 0 5px; }
+.myblog li { width: 33.3%; }
+.qq_join li section { margin: 0 5px; padding: 5px; }
+.qq_join li p { margin: 10px 0; font-size: 12px }
+.endnav p:last-child { text-align: center; margin-top: 20px; }
+.site_tj li { width: 20% }
+.card-nav a { font-size: 12px }
+.muban li section { margin: 0 5px; height: 260px; overflow: hidden }
+.special-topic li { width: 27.6%; padding: 8px }
+}
+ @media only screen and (max-width: 480px) {
+.headline { width: 100% }
+.headline .image-box-list { height: auto; padding-bottom: 10px; overflow: hidden }
+.headline .image-box-list .image-box { width: 49%; float: left; }
+.headline .image-box-list .image-box:last-child { float: right }
+.headline .image-box-list .image-box span { padding: 0 20px }
+.app-carousel { width: 100% }
+.fader { height: 200px; }
+.tab-panel-picture { width: 100%; height: auto }
+.tab-panel-picture .image-box { width: 49%; float: left }
+.tab-panel-picture .image-box:last-child { float: right }
+.tab-panel-picture .image-box a { height: 100% }
+.tab-panel-item-list { float: none !important; width: 100% !important }
+.special-topic ul { padding: 0 }
+.special-topic li { width: 44%; padding: 8px; }
+.special-topic ul:before { left: 0; }
+.special-topic ul:after { bottom: 0 }
+.ad { padding: 5px }
+.blog-item-title { font-size: 16px }
+.blog-item-images { height: 60px }
+.blog-item-images a img { height: 100% }
+a.blog-item-view-more { position: static; margin-top: 20px; text-align: center }
+.blog-item-image { width: 100px; margin-right: 10px; height: 76px; }
+.blog-item-text { margin-top: 15px }
+.lanmu h1 { font-size: 18px; }
+.top_pic { width: 100%; float: none; margin-bottom: 10px }
+.top_box { float: none; width: 100%; }
+.liucheng li, .jianzhan li:nth-child(1), .jianzhan li:nth-child(3) { width: 100%; }
+.muban li section { height: auto }
+.site_tj li { width: 50% }
+.about { padding: 20px }
+.ab_box p:last-child { width: 100%; clear: both; padding-top: 10px }
+.ly_button { float: none; display: block; }
+.xinlu li { width: 50% }
+.myblog li, .xiangsi li { width: 50% }
+.qq_join li { width: 50%; margin-bottom: 20px }
+.wxbox ul { overflow: hidden; text-align: center }
+.wxbox li { float: none; display: inline-block }
+.wxbox { float: none }
+.endnav { width: 100%; overflow: hidden; margin-top: 20px }
+.endnav p { margin: 0 10px }
+.price_info img { position: static }
+.free li { width: 100%; margin-bottom: 10px }
+.tab-panel-picture span { padding: 0 8px !important; }
+.card-nav { float: none; width: 100%; clear: both; display: block; overflow: hidden; }
+.special-topic-image { height: 60px; }
+.special-topic li b { -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2; font-size: 14px; height: 42px; line-height: 24px; white-space: inherit; }
+.blog-item-info { width: 100% }
+.img-scale img { height: 100%; max-width: 100%; }
+.blog-item-image i { display: none }
+.fader .slide img { height: 200px; }
+.otherlink li{width:100%}
+.tab-labels { overflow-x: auto !important;}
+.tab-labels ul { width: 600px;overflow-x: scroll;}
+.tab-labels li {margin-right: 30px;width: auto !important;}
+.tab-label-current:after{width:100% !important}
+}
