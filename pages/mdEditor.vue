@@ -2,48 +2,55 @@
   <div class="md-container">
     <div class="md-header">
       <div class="md-title">
-        <input type="text" class="md-title-text" placeholder="请输入文章标题">
+        <input type="text" class="md-title-text" :value="title" :placeholder="$t('markdown.inputPlaceholder')">
       </div>
       <div class="md-info">
-        <button class="md-post">发布文章</button>
+        <button class="md-post" @click="publishPost">{{$t('markdown.publish')}}</button>
         <div class="user-box">
           <div class="btn_user-info" @mouseenter="showUserBox=true" @mouseleave="showUserBox = false">
-            <img width="32" height="32" src="/images/author.jpg">
+            <img width="32" height="32" :src="author.image">
             <div class="user-option-box" :style="{'display': showUserBox?'unset':'none'}">
-              <a href="https://mp.csdn.net">博文管理</a>
-              <a href="https://mp.csdn.net">我的博客</a>
-              <a href="https://mp.csdn.net">退出</a>
+              <a href="https://mp.csdn.net">{{$t('markdown.postManager')}}</a>
+              <a href="https://mp.csdn.net">{{$t('markdown.myBlog')}}</a>
+              <a href="https://mp.csdn.net">{{$t('markdown.exit')}}</a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
     <span class="clear-blank"></span>
 
     <div class="md-left">
-      <!--<i class="md-line"></i>-->
       <div class="md-posts-info">
         <div class="md-corpus">
-          <a class="new-corpus" href="javascript:void(0)">
-            <i class="fa fa-plus-circle" style="margin-right: 5px"></i> 新建文集
+          <a class="new-corpus" href="javascript:void(0)" @click="showCorPusForm = true">
+            <i class="fa fa-plus-circle" style="margin-right: 5px"></i>
+            {{$t('markdown.newCorpus')}}
           </a>
+          <div class="md-corpus-form" :style="{'display' : showCorPusForm? 'block' : 'none'}">
+            <input type="text" v-model="corpusText">
+            <div class="operate" >
+              <button class="submit" @click="newCorpus">{{$t('markdown.corpusSubmit')}}</button>
+              <button class="cancel" @click="showCorPusForm = false">{{$t('markdown.corpusCancel')}}</button>
+            </div>
+          </div>
+
           <ul>
-            <li><i class="fa fa-book"></i> 文集一 <i class="fa fa-minus-circle"></i></li>
-            <li><i class="fa fa-book"></i> 文集二 <i class="fa fa-minus-circle"></i></li>
-            <li><i class="fa fa-book"></i> 文集三 <i class="fa fa-minus-circle"></i></li>
-
+            <li :class="{'corpus-selected': currentCorpus === index}" v-for="(vol, index) in corpusList" @click="selectCorpus(index)">
+              <i class="fa fa-book"></i> {{vol.name}} <i class="fa fa-minus-circle"></i></li>
           </ul>
-
         </div>
+
         <div class="md-posts">
           <a class="new-article" href="javascript:void(0)" @click="newPost">
-            <i class="fa fa-plus-circle" style="margin-right: 5px"></i> {{newPostBtn}}
+            <i class="fa fa-plus-circle" style="margin-right: 5px"></i>
+              {{ isNewPost? $t('markdown._newPost') :$t('markdown.newPost')}}
           </a>
+          <i class="md-line"></i>
           <ul>
-            <li :class="{'selected': currentPost === index}" v-for="(vol, index) in postList" @click="selectPost(index)">
+            <li :class="{'post-selected': currentPost === index}" v-for="(vol, index) in postList" @click="selectPost(index)">
               <i class="fa fa-file-text-o" style="margin-right: 5px"></i>
-              {{vol}}
+              {{vol.title}}
               <i class="fa fa-minus-circle" @click="deletePost(index)"></i>
             </li>
           </ul>
@@ -75,6 +82,7 @@
   }
   export default {
     name: "mdEditor",
+    layout: 'simple',
     watch: {
       text() {
         this.$nextTick(() => {
@@ -94,11 +102,21 @@
         })
       },
     },
+    computed: {
+      corpusList() {
+        return this.$store.getters.getCorpusList
+      },
+      postList() {
+        return this.$store.getters.getPostList
+      }
+    },
     data: () => ({
+      corpusText: '',
+      showCorPusForm: false,
+      currentCorpus: '',
+      isNewPost: false,
       showUserBox: false,
       currentPost: '',
-      postList: ['文章一', '文章二', '文章三'],
-      newPostBtn: '新建文章',
       current: '',
       title: '欢迎使用Kodear-markdown编辑器',
       toolbars: {
@@ -136,45 +154,62 @@
         subfield: true, // 单双栏模式
         preview: true, // 预览
       },
-      articles: [
-        {
-          id: 1,
-          title: '文章112312312'
-        },
-        {
-          id: 2,
-          title: '文章2'
-        },
-        {
-          id: 3,
-          title: '文章3'
-        },
-      ],
-      items: [
-        {title: '博客管理'},
-        {title: '我的博客'},
-        {title: '退出'},
-      ],
+      author: {
+        id: 1,
+        image: '/images/author.jpg'
+      },
       text: ''
     }),
 
     methods: {
+      newCorpus() {
+        const corpus = {
+          name: this.corpusText,
+          userId: this.author.id
+        }
+        this.$store.dispatch('article/newCorpus', corpus)
+          .then(() => {
+            console.log('新增文集完毕！')
+          })
+      },
+      publishPost() {
+        const post = {
+          userId: this.author.id,
+          title: this.title,
+          text: this.text,
+          corpusId: this.currentCorpus
+        }
+        this.$store.dispatch('article/publishPost', post)
+          .then(resp => {
+            console.log('发布完成')
+          })
+      },
       deletePost(index) {
-        this.postList.splice(index, 1)
+        this.$store.dispatch('article/deletePost')
+          .then(() => {
+            this.postList.splice(index, 1)
+          })
+      },
+      selectCorpus(index) {
+        console.log(index)
+        this.currentCorpus = index
       },
       selectPost(index) {
-        this.currentPost = index
+        this.$store.dispatch('article/selectPost', index)
+          .then(resp => {
+            this.currentPost = index
+          })
       },
       newPost() {
-        this.newPostBtn = "新建文章中...";
+        this.isNewPost = true
         setTimeout(() => {
-          this.newPostBtn = '新建文章'
-          this.postList.push('文章' + (this.postList.length + 1))
+          this.$store.dispatch('article/newPost')
+            .then(() => {
+              this.isNewPost = false
+            })
         }, 1000)
       },
-      post() {
-        console.log('post')
-      },
+
       // 绑定@imgAdd event
       $imgAdd(pos, $file) {
         // 第一步.将图片上传到服务器.
@@ -262,6 +297,44 @@
 </style>
 
 <style scoped>
+  .md-corpus-form .operate {
+    display: flex;
+    margin: 0 5px 10px 10px;
+  }
+  .md-corpus-form button{
+    outline: none;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: #404040;
+    cursor: pointer;
+  }
+  .md-corpus-form .submit {
+    flex: 1;
+    color: #42c02e;
+    border: 1px solid #42c02e;
+  }
+  .md-corpus-form .cancel {
+    border: none;
+    flex: 1;
+    color: #999999;
+  }
+  .md-corpus-form>input{
+    width: 90%;
+    outline: none;
+    height: 30px;
+    color: #ccc;
+    background-color: #595959;
+    border: 1px solid #333;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .md-corpus-form {
+    text-align: center;
+    margin-bottom: 15px;
+  }
   .md-info .user-option-box a {
     display: block;
     margin-top: 4px;
@@ -365,9 +438,20 @@
     font-weight: 400;
   }
 
-  .md-left .selected {
+  .md-left .corpus-selected {
+    border-left: 3px solid #ec7259;
+    background: #666666;
+
+  }
+  .md-left .post-selected {
     background: #E6E6E6;
     border-left: 3px solid #ec7259;
+  }
+
+  .md-left .md-line {
+    height: 1px;
+    background: #E5E5E5;
+    display: block;
   }
 
   * {

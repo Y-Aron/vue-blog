@@ -47,6 +47,9 @@ article { padding-top: 80px; }
 .special-topic li { width: 27%; }
 }
  @media only screen and (max-width: 768px) {
+#sign { background-color: white !important; overflow: hidden}
+#sign .sign-main { box-shadow: unset !important; padding: 0 !important; width: 320px !important;}
+.sign-main .title a { font-size: 20px !important;}
 .special-topic li { padding: 15px; }
 .blog-item-images a img { width: 96% }
 .xinlu li a { padding: 5px; margin: 0 5px; }

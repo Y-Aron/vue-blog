@@ -2,5 +2,18 @@
   "header": {
     "logo": "Y-Aron社区",
     "home": "首页"
+  },
+  "markdown": {
+    "newPost": "新建文章",
+    "_newPost": "新建文章中...",
+    "newCorpus": "新建文集",
+    "_newCorpus": "新建文集中...",
+    "corpusSubmit": "提交",
+    "corpusCancel": "取消",
+    "publish": "发布文章",
+    "postManager": "博文管理",
+    "myBlog": "我的博客",
+    "exit": "退出",
+    "inputPlaceholder": "请输入文章标题"
   }
 }

@@ -5,7 +5,7 @@
       <div class="logo"><a href="http://www.yangqq.com">{{$t('header.logo')}}</a></div>
       <nav id="app-nav">
         <ul id="app-nav-list">
-          <li><a href="index.html">{{$t('header.home')}}</a></li>
+          <li><a href="index.html"><i class="fa fa-home"></i> {{$t('header.home')}}</a></li>
           <li><a href="list.html">个人博客日记</a></li>
           <li class="menu"><a href="list2.html">博客网站制作</a>
             <ul class="sub">
