@@ -64,7 +64,7 @@ a:hover { color: #000; text-decoration: none; }
 /*article*/
 
 /*left-container*/
-.left-container { width: 66%; float: left; overflow: hidden; margin-left: 100px }
+.left-container { float: left; overflow: hidden; }
 /*carousel*/
 .app-carousel { width: 68.5%; overflow: hidden; float: left; border-radius: 3px; margin-bottom: 20px }
 .carousel { width: 100%; overflow: hidden; float: left; }

@@ -4,7 +4,6 @@
     <layout-search />
     <layout-article />
     <layout-footer />
-    <nuxt/>
   </div>
 </template>
 

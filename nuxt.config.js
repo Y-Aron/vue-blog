@@ -39,7 +39,8 @@ module.exports = {
   plugins: [
     '~/plugins/axios',
     '~/plugins/i18n',
-    { src: "~/plugins/vue-markdown.js", ssr: false },
+    '~/plugins/utils',
+    { src: "~/plugins/vue-no-ssr.js", ssr: false },
 
   ],
 

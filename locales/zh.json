@@ -15,5 +15,27 @@
     "myBlog": "我的博客",
     "exit": "退出",
     "inputPlaceholder": "请输入文章标题"
+  },
+  "sign": {
+    "in": "登录",
+    "up": "注册",
+    "more": "社交账号登录"
+  },
+  "signIn": {
+    "user": "手机号或邮箱",
+    "password": "密码",
+    "remember": "记住我",
+    "noUser": "没有账号，前往注册",
+    "captcha": "验证码",
+    "submit": "登录"
+  },
+  "signUp": {
+    "nickname": "你的昵称",
+    "mobile": "手机号",
+    "captcha": "手机验证码",
+    "password": "设置密码",
+    "submit": "注册",
+    "sendCaptcha": "发送验证码",
+    "newSend": "重新发送"
   }
 }

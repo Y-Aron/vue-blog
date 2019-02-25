@@ -19,9 +19,9 @@
           <li><a href="list3.html">网页设计心得</a></li>
           <li><a href="daohang.html">优秀个人博客</a></li>
           <li><a href="about.html">关于我</a></li>
-          <li><a class="write-post" style="cursor: pointer;"><i></i>写博客</a></li>
-          <li><a href="about.html">登录</a></li>
-          <li><a href="about.html">注册</a></li>
+          <li><nuxt-link class="write-post" to="/mdEditor" style="cursor: pointer;"><i></i>写博客</nuxt-link></li>
+          <li><nuxt-link :to="{name: 'sign-mode', params: {mode: 'in'}}">登录</nuxt-link></li>
+          <li><nuxt-link :to="{name: 'sign-mode', params: {mode: 'up'}}">注册</nuxt-link></li>
         </ul>
       </nav>
 

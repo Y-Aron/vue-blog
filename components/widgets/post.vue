@@ -22,6 +22,7 @@
     name: "post",
     data() {
       return {
+        hover: false,
         title: '【个人博客网站制作】自己不会个人博客网站制作，你会选择用什么博客程序源码？',
         type: '原创模板',
         text: '这些开源的博客程序源码，都是经过很多次版本测试的，都有固定的使用人群。我所知道的主流的博客程序有，Z-blog，Emlog，WordPress，Typecho等，免费的cms系统有，织梦cms（dedecms），phpcms，帝国cms（EmpireCMS）！... ',

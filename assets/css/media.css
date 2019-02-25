@@ -3,7 +3,7 @@
 .app-header-nav { width: 96% }
 #app-nav-list li a { padding: 0 10px; }
 #app-nav-list li.menu:before { right: 0 }
-.special-topic li { width: 27% }
+.special-topic li { width: 25.7% }
 .app-search { width: 96%}
 .box, article { width: 96% }
 .fader .slide img { height: 320px }
@@ -38,7 +38,7 @@
 .box, article { width: 96% }
 article { padding-top: 80px; }
 #article-nav { display: none }
-.left-container { width: 100%; margin-left: 0 }
+.left-container { width: 100% !important; margin-left: 0 }
 .right-container { display: none }
 .qq_join li section { margin: 0 10px }
 .jianzhan li section { margin: 0 5px; }
@@ -46,11 +46,12 @@ article { padding-top: 80px; }
 .jianzhan li:nth-child(3) { width: 36.3% }
 .special-topic li { width: 27%; }
 }
+
+
  @media only screen and (max-width: 768px) {
 #sign { background-color: white !important; overflow: hidden}
 #sign .sign-main { box-shadow: unset !important; padding: 0 !important; width: 320px !important;}
 .sign-main .title a { font-size: 20px !important;}
-.special-topic li { padding: 15px; }
 .blog-item-images a img { width: 96% }
 .xinlu li a { padding: 5px; margin: 0 5px; }
 .myblog li { width: 33.3%; }
@@ -60,9 +61,12 @@ article { padding-top: 80px; }
 .site_tj li { width: 20% }
 .card-nav a { font-size: 12px }
 .muban li section { margin: 0 5px; height: 260px; overflow: hidden }
-.special-topic li { width: 27.6%; padding: 8px }
+.special-topic li { width: 29.6%; padding: 8px }
 }
+
+
  @media only screen and (max-width: 480px) {
+#sign .sign-main { width: 300px !important;}
 .headline { width: 100% }
 .headline .image-box-list { height: auto; padding-bottom: 10px; overflow: hidden }
 .headline .image-box-list .image-box { width: 49%; float: left; }
@@ -76,7 +80,7 @@ article { padding-top: 80px; }
 .tab-panel-picture .image-box a { height: 100% }
 .tab-panel-item-list { float: none !important; width: 100% !important }
 .special-topic ul { padding: 0 }
-.special-topic li { width: 44%; padding: 8px; }
+.special-topic li { width: 43%; padding: 8px; }
 .special-topic ul:before { left: 0; }
 .special-topic ul:after { bottom: 0 }
 .ad { padding: 5px }
