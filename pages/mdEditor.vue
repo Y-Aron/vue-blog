@@ -29,14 +29,15 @@
           </a>
           <div class="md-corpus-form" :style="{'display' : showCorPusForm? 'block' : 'none'}">
             <input type="text" v-model="corpusText">
-            <div class="operate" >
+            <div class="operate">
               <button class="submit" @click="newCorpus">{{$t('markdown.corpusSubmit')}}</button>
               <button class="cancel" @click="showCorPusForm = false">{{$t('markdown.corpusCancel')}}</button>
             </div>
           </div>
 
           <ul>
-            <li :class="{'corpus-selected': currentCorpus === index}" v-for="(vol, index) in corpusList" @click="selectCorpus(index)">
+            <li :class="{'corpus-selected': currentCorpus === index}" v-for="(vol, index) in corpusList"
+                @click="selectCorpus(index)">
               <i class="fa fa-book"></i> {{vol.name}} <i class="fa fa-minus-circle"></i></li>
           </ul>
         </div>
@@ -44,11 +45,12 @@
         <div class="md-posts">
           <a class="new-article" href="javascript:void(0)" @click="newPost">
             <i class="fa fa-plus-circle" style="margin-right: 5px"></i>
-              {{ isNewPost? $t('markdown._newPost') :$t('markdown.newPost')}}
+            {{ isNewPost? $t('markdown._newPost') :$t('markdown.newPost')}}
           </a>
           <i class="md-line"></i>
           <ul>
-            <li :class="{'post-selected': currentPost === index}" v-for="(vol, index) in postList" @click="selectPost(index)">
+            <li :class="{'post-selected': currentPost === index}" v-for="(vol, index) in postList"
+                @click="selectPost(index)">
               <i class="fa fa-file-text-o" style="margin-right: 5px"></i>
               {{vol.title}}
               <i class="fa fa-minus-circle" @click="deletePost(index)"></i>
@@ -64,6 +66,7 @@
           @imgAdd="$imgAdd"
           ref="md"
           class="md"
+          :codeStyle="'atom-one-dark'"
           @save="save"
           v-model="text"
           :toolbars="toolbars"/>
@@ -245,11 +248,23 @@
 
 <style>
   @media screen and (max-width: 768px) {
-    .md-container .md-left {display: none;}
-    .md-container .md-body {margin-left: 0 !important;}
-    .v-note-edit {flex: 0 0 100% !important;}
-    .v-note-show {display: none !important;}
+    .md-container .md-left {
+      display: none;
+    }
+
+    .md-container .md-body {
+      margin-left: 0 !important;
+    }
+
+    .v-note-edit {
+      flex: 0 0 100% !important;
+    }
+
+    .v-note-show {
+      display: none !important;
+    }
   }
+
   .v-note-wrapper .v-note-panel.shadow {
     box-shadow: none !important;
     border: 1px solid #E8E8E8 !important;
@@ -263,12 +278,11 @@
     list-style: decimal;
   }
 
-  .v-note-show ul li {
-    list-style: unset;
+  .v-note-show ul, .v-note-show ul li {
+    list-style: unset !important;
   }
-
   .v-note-show .contains-task-list li {
-    list-style: none;
+    list-style: none !important;
   }
 
   .v-note-wrapper .v-note-op.shadow {
@@ -290,6 +304,14 @@
   .v-note-show pre {
     color: #c7254e;
   }
+  .markdown-body pre code {
+    display: block !important;
+    padding: 7px !important;
+  }
+  .markdown-body .highlight pre, .markdown-body pre {
+    padding: 0 !important;
+    background: #F2F2F2 !important;
+  }
 
   .v-note-show table thead tr {
     background-color: rgba(0, 0, 0, .05);
@@ -301,24 +323,28 @@
     display: flex;
     margin: 0 5px 10px 10px;
   }
-  .md-corpus-form button{
+
+  .md-corpus-form button {
     outline: none;
     padding: 3px;
     border-radius: 10px;
     background-color: #404040;
     cursor: pointer;
   }
+
   .md-corpus-form .submit {
     flex: 1;
     color: #42c02e;
     border: 1px solid #42c02e;
   }
+
   .md-corpus-form .cancel {
     border: none;
     flex: 1;
     color: #999999;
   }
-  .md-corpus-form>input{
+
+  .md-corpus-form > input {
     width: 90%;
     outline: none;
     height: 30px;
@@ -335,6 +361,7 @@
     text-align: center;
     margin-bottom: 15px;
   }
+
   .md-info .user-option-box a {
     display: block;
     margin-top: 4px;
@@ -390,9 +417,11 @@
     display: flex;
     height: 100%;
   }
-  .md-posts-info .md-posts{
+
+  .md-posts-info .md-posts {
     flex: 1;
   }
+
   .md-posts-info .md-corpus {
     height: 100%;
     flex: 1;
@@ -400,7 +429,7 @@
     color: white;
   }
 
-  .md-posts-info ul> li {
+  .md-posts-info ul > li {
     padding: 10px 16px;
     cursor: pointer;
   }
@@ -431,6 +460,7 @@
     font-size: 15px;
     font-weight: 400;
   }
+
   .md-left .new-article {
     display: block;
     padding: 15px 20px 10px 10px;
@@ -443,6 +473,7 @@
     background: #666666;
 
   }
+
   .md-left .post-selected {
     background: #E6E6E6;
     border-left: 3px solid #ec7259;
