@@ -41,6 +41,8 @@
   "postView": {
     "nice": "很赞哦~",
     "pre": "上一篇",
-    "next": "下一篇"
+    "next": "下一篇",
+    "location": "您现在的位置是",
+    "relation": "相关文章"
   }
 }

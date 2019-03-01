@@ -3,18 +3,12 @@
     <post-container />
 
     <div class="whitebg">
-      <h2 class="card-title">相关文章</h2>
+      <h2 class="card-title">{{$t('postView.relation')}}</h2>
       <ul class="otherlink">
-        <li><a href="/download/div/2018-04-22/815.html" title="html5个人博客模板《黑色格调》">html5个人博客模板《黑色格调》</a></li>
-        <li><a href="/download/div/2018-04-18/814.html" title="html5个人博客模板主题《清雅》">html5个人博客模板主题《清雅》</a></li>
-        <li><a href="/download/div/2018-03-18/807.html" title="html5个人博客模板《绅士》">html5个人博客模板《绅士》</a></li>
-        <li><a href="/download/div/2018-02-22/798.html" title="html5时尚个人博客模板-技术门户型">html5时尚个人博客模板-技术门户型</a></li>
-        <li><a href="/download/div/2017-09-08/789.html" title="html5个人博客模板主题《心蓝时间轴》">html5个人博客模板主题《心蓝时间轴》</a></li>
-        <li><a href="/download/div/2017-07-16/785.html" title="古典个人博客模板《江南墨卷》">古典个人博客模板《江南墨卷》</a></li>
-        <li><a href="/download/div/2017-07-13/783.html" title="古典风格-个人博客模板">古典风格-个人博客模板</a></li>
-        <li><a href="/download/div/2015-06-28/748.html" title="个人博客《草根寻梦》—手机版模板">个人博客《草根寻梦》—手机版模板</a></li>
-        <li><a href="/download/div/2015-04-10/746.html" title="【活动作品】柠檬绿兔小白个人博客模板">【活动作品】柠檬绿兔小白个人博客模板</a></li>
-        <li><a href="/jstt/bj/2015-01-09/740.html" title="【匆匆那些年】总结个人博客经历的这四年…">【匆匆那些年】总结个人博客经历的这四年…</a></li>
+        <li v-for="vol in 10">
+          <nuxt-link :to="{name: 'post-id', params: {id: vol}}">html5 个人博客模板《蓝色畅想》</nuxt-link>
+        </li>
+
       </ul>
     </div>
 

@@ -1,6 +1,8 @@
 <template>
   <div class="post-container whitebg">
-    <h2 class="card-title"><span class="con_nav">您现在的位置是：<a href="/">网站首页</a>><a href="/">个人博客模板</a></span>个人博客模板</h2>
+    <h2 class="card-title"><span class="con_nav">{{$t('postView.location')}}：
+      <a href="/">网站首页</a>><a href="/">个人博客模板</a></span>个人博客模板
+    </h2>
 
     <h1 class="post-title">{{title}}</h1>
 
@@ -47,6 +49,8 @@
 	export default {
 		name: "postContainer",
     updated() {
+		  const s = document.querySelector('.v-note-wrapper .v-note-panel.shadow')
+      s.style.cssText = 'box-shadow: unset !important;border:none !important'
 		  this.interval = setInterval(() => {
         const mermaidList = document.querySelectorAll('.v-note-show pre>code.lang-mermaid')
         mermaidList.forEach(e => {

@@ -117,7 +117,7 @@ a.blog-item-view-more { position: static; margin-top: 20px; text-align: center }
 .img-scale img { height: 100%; max-width: 100%; }
 .blog-item-image i { display: none }
 .fader .slide img { height: 200px; }
-.otherlink li{width:100%}
+.other-link li{width:100%}
 .tab-labels { overflow-x: auto !important;}
 .tab-labels ul { width: 600px;overflow-x: scroll;}
 .tab-labels li {margin-right: 30px;width: auto !important;}
