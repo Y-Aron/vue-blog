@@ -13,7 +13,10 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
+    "cxlt-vue2-toastr": "^1.1.0",
     "highlight": "^0.2.4",
+    "katex": "^0.10.1",
+    "marked": "^0.6.1",
     "mavon-editor": "^2.6.17",
     "mermaid": "^8.0.0",
     "nuxt": "^2.4.0",

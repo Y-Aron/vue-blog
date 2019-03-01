@@ -39,8 +39,9 @@
             {{$t('signIn.noUser')}} <i class="fa fa-arrow-right"></i>
           </div>
 
-          <button class="sign-in-btn sign-btn" @click="login">
-            <i class="fa fa-spinner fa-pulse fa-fw" v-show="loading"></i> {{$t('signIn.submit')}}</button>
+          <button class="sign-in-btn sign-btn" @click="transaction(login)">
+            <i class="fa fa-spinner fa-pulse fa-fw" v-show="loading"></i>
+            {{$t('signIn.submit')}}</button>
         </div>
 
         <div class="sign-up-container" :style="{'display': showSignIn?'none': 'block'}">
@@ -65,7 +66,10 @@
             <input type="text" :placeholder="$t('signUp.password')">
             <i class="fa fa-lock"></i>
           </label>
-          <button class="sign-btn sign-up-btn" >{{$t('signUp.submit')}}</button>
+          <button class="sign-btn sign-up-btn" @click="transaction(register)">
+            <i class="fa fa-spinner fa-pulse fa-fw" v-show="loading"></i>
+            {{$t('signUp.submit')}}
+          </button>
 
           <p class="sign-up-msg">点击 “注册” 即表示您同意并愿意遵守简书<br>
             <a target="_blank" href="http://www.jianshu.com/p/c44d171298ce">用户协议</a> 和
@@ -104,32 +108,49 @@
       },
       mobile(val) {
         this.showCaptcha = true
-		    this.captchaCls['disable'] = !this.$utils.verifyMobile(val);
+		    this.captchaCls['disable'] = !this.$verify.verifyMobile(val);
       },
       captcha(val) {
 
       }
     },
     methods: {
-      alert(text) {
-        console.log(text)
+      transaction(func) {
+        if (this.loading) {
+          return
+        }
+        this.loading = true
+        func()
+        setTimeout(() => {
+          this.loading = false
+        }, 1000)
+      },
+
+      register() {
+        console.log('注册')
       },
       sendCaptcha() {
+        if (this.sending) {
+          return
+        }
+        const seconds = this.seconds
         this.sending = true
-        const timer = setInterval(() => {
+        const interval = setInterval(() => {
           this.seconds -= 1
         }, 1000)
 
         setTimeout(() => {
-          clearInterval(timer)
+          clearInterval(interval)
+          console.log('发送成功')
+
+
+
           this.sending = false
-        }, this.seconds * 1000)
+          this.seconds = seconds
+        }, seconds * 1000)
       },
 		  login() {
-		    this.loading = true
-        setTimeout(() => {
-          this.loading = false
-        }, 1000)
+        console.log('登陆')
       },
       changeTooltip(refName, message) {
         const e = this.$refs[refName].getBoundingClientRect()

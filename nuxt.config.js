@@ -40,6 +40,7 @@ module.exports = {
     '~/plugins/axios',
     '~/plugins/i18n',
     '~/plugins/utils',
+    '~/plugins/verify',
     { src: "~/plugins/vue-no-ssr.js", ssr: false },
 
   ],
