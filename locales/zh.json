@@ -44,5 +44,25 @@
     "next": "下一篇",
     "location": "您现在的位置是",
     "relation": "相关文章"
+  },
+  "comment": {
+    "post": "发布评论",
+    "list": {
+      "title": "评论列表",
+      "info": "已有{0}条评论，共{1}人参与"
+    },
+    "new": {
+      "placeholder": "写下你的评论 ..",
+      "hint": "Ctrl+Enter 发表",
+      "cancel": "取消",
+      "send": "发送"
+    },
+    "floor": "楼",
+    "actions": {
+      "like": "赞",
+      "reply": "回复",
+      "delete": "删除",
+      "new": "添加新评论"
+    }
   }
 }

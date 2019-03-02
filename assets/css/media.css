@@ -123,3 +123,10 @@ a.blog-item-view-more { position: static; margin-top: 20px; text-align: center }
 .tab-labels li {margin-right: 30px;width: auto !important;}
 .tab-label-current:after{width:100% !important}
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

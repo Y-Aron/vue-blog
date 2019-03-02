@@ -49,8 +49,8 @@
 	export default {
 		name: "postContainer",
     updated() {
-		  const s = document.querySelector('.v-note-wrapper .v-note-panel.shadow')
-      s.style.cssText = 'box-shadow: unset !important;border:none !important'
+		  document.querySelector('.v-note-wrapper .v-note-panel.shadow')
+        .style.cssText = 'box-shadow: unset !important;border:none !important'
 		  this.interval = setInterval(() => {
         const mermaidList = document.querySelectorAll('.v-note-show pre>code.lang-mermaid')
         mermaidList.forEach(e => {
