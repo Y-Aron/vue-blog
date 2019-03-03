@@ -1,31 +1,31 @@
 <template>
-  <tabs v-model=tabName>
-    <tab-panel v-for="(item, index) in tabs" :key="index" :label="item.label" :name="index" >
-      <div class="tab-panel-picture">
+  <tabs v-model="tabName">
+    <tab-panel v-for="(item, index) in tabs"
+               :key="index" :label="item.label" :name="index"
+               :style="{'display': index !== 0?'none':'block'}">
+      <div class="tab-panel-picture" >
         <div class="picture-list">
-          <image-box v-for="vol in item.imageList" :src="vol.src" :title="vol.title" :height="100"/>
+          <image-box v-for="vol in item.imageList" :src="vol.src" :key="vol.title" :title="vol.title" :height="100"/>
         </div>
       </div>
+
       <ul class="tab-panel-item-list">
         <li v-for="(vol, index) in item.list">
           <i><span>{{index+1}}</span></i>
           <a href="/" style="-webkit-box-orient: vertical;">{{vol.title}}</a>
           <p style="-webkit-box-orient: vertical;">{{vol.details}}</p>
         </li>
-
       </ul>
-
     </tab-panel>
   </tabs>
 
 </template>
 
 <script>
-	import Tabs from "../widgets/tabs";
-  import TabPanel from "../widgets/tabPanel";
+	import Tabs from "./tabs";
+  import TabPanel from "./tabPanel";
   import ImageBox from "../widgets/imageBox";
   export default {
-		name: "tabContainer",
     components: {ImageBox, TabPanel, Tabs},
     data() {
       return {

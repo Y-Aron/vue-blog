@@ -2,18 +2,15 @@
   <div>
     <layout-header />
     <layout-search />
-    <layout-article />
-    <layout-footer />
+    <layout-container />
+    <!--<layout-footer />-->
   </div>
 </template>
 
 <script>
-  import layoutHeader from "../components/layout/layoutHeader";
-  import LayoutSearch from "../components/layout/layoutSearch";
-  import LayoutArticle from "../components/layout/layoutArticle";
-  import LayoutFooter from "../components/layout/layoutFooter";
+  import {LayoutContainer, LayoutFooter, LayoutHeader, LayoutSearch} from "~/components";
 
   export default {
-    components:  {LayoutFooter, LayoutArticle, LayoutSearch, layoutHeader},
+    components:  {LayoutFooter, LayoutContainer, LayoutSearch, LayoutHeader},
   }
 </script>

@@ -36,18 +36,14 @@
 </template>
 
 <script>
-
   let mermaid
   if (process.client) {
     mermaid = require('mermaid')
     mermaid.initialize({
       theme: 'default',
-      // startOnLoad:true
     })
   }
-
 	export default {
-		name: "postContainer",
     updated() {
 		  document.querySelector('.v-note-wrapper .v-note-panel.shadow')
         .style.cssText = 'box-shadow: unset !important;border:none !important'

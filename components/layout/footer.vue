@@ -21,7 +21,7 @@
 
 <script>
 	export default {
-		name: "layoutFooter",
+
     methods: {
       top(){
         let distance = document.documentElement.scrollTop || document.body.scrollTop; //获得当前高度

@@ -14,7 +14,8 @@
       <span>{{createdate}}</span>
       <span>【<a href="/">{{type}}</a>】</span>
     </p>
-    <a href="/" class="blog-item-view-more">{{viewmore}}</a></li>
+    <nuxt-link :to="{name: 'post-id', params: {id: 1}}" class="blog-item-view-more">{{view_more}}</nuxt-link>
+  </li>
 </template>
 
 <script>
@@ -28,7 +29,7 @@
         text: '这些开源的博客程序源码，都是经过很多次版本测试的，都有固定的使用人群。我所知道的主流的博客程序有，Z-blog，Emlog，WordPress，Typecho等，免费的cms系统有，织梦cms（dedecms），phpcms，帝国cms（EmpireCMS）！... ',
         author: '杨青青',
         createdate: '2018-10-28',
-        viewmore: '阅读更多'
+        view_more: '阅读更多'
       }
     }
   }

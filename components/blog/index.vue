@@ -16,7 +16,7 @@
           如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if
           来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
         <p class="blog-item-info"><i class="avatar">
-          <img src="images/avatar.jpg"></i><span>杨青青</span><span>2018-10-28</span><span>【<a href="/">原创模板</a>】</span>
+          <img src="images/avatar.jpg" alt=""></i><span>杨青青</span><span>2018-10-28</span><span>【<a href="/">原创模板</a>】</span>
         </p>
       </li>
       <!--单图-->
@@ -28,7 +28,6 @@
 <script>
 	import Post from "./post";
   export default {
-		name: "blogList",
     components: {Post}
   }
 </script>

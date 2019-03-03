@@ -2,8 +2,9 @@
   <div class="tabs-box whitebg">
     <div class="tab-labels">
       <ul>
-        <li v-for="(item, index) in tabList" :class="tabClass(item)" @click="handlerChange(index)">
-          {{item.label}}
+        <li v-for="(item, index) in tabList"
+            :class="tabClass(item)" @click="handlerChange(index)"
+            v-html="item.label">
         </li>
       </ul>
     </div>
@@ -15,7 +16,6 @@
 
 <script>
 	export default {
-		name: "tabs",
     props: {
 		  value: {
 		    type: [String, Number]

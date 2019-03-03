@@ -6,7 +6,7 @@
 
 <script>
 	export default {
-		name: "tabPanel",
+    name: 'tabPanel',
     props: {
 		  name: {
 		    type: [String, Number]
@@ -15,6 +15,9 @@
 		    type: String,
         default: ''
       }
+    },
+    mounted() {
+      this.updateTab()
     },
     data() {
 		  return {
@@ -30,9 +33,6 @@
       label() {
         this.updateTab()
       }
-    },
-    mounted() {
-		  this.updateTab()
     }
   }
 </script>

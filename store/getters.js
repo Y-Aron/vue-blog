@@ -9,7 +9,11 @@ export default {
   },
 
   getCorpusList: state => {
-    return state.article.corpusList;
+    return state.article.corpusList
+  },
+
+  getCommentList: state => {
+    return state.comment.commentList
   }
 
 }

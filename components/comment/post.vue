@@ -1,8 +1,8 @@
 <template>
   <div class="post-comment">
     <div style="display: flex;">
-      <a class="comment-author" v-show="showAuthor">
-        <img src="/images/author.jpg">
+      <a class="comment-author" v-show="showImage">
+        <img :src="receiver.picture" alt="">
       </a>
 
       <textarea class="comment-text" v-model="text"
@@ -23,9 +23,23 @@
 
 <script>
 	export default {
-		name: "postComment",
     props: {
-		  showAuthor: false
+		  showImage: false,
+      receiver: {
+        type: Object,
+        default: () => {
+          return {}
+        }
+      },
+      nickname: {
+		    type: String,
+        default: ''
+      }
+    },
+    watch: {
+      nickname(val) {
+        this.text = val
+      }
     },
     data() {
 		  return {
@@ -36,8 +50,15 @@
     },
     methods: {
 		  send() {
+		    if (this.sending) {
+		      return
+        }
         this.sending = true
-
+        const model = {
+		      text: this.text.replace(this.nickname, ''),
+          receiver: this.receiver
+        }
+        this.$store.dispatch('comment/post', model)
         setTimeout(() => {
           this.sending = false
         }, 1000)
@@ -78,7 +99,6 @@
     text-align: right;
     margin: 5px 0;
   }
-
   textarea.comment-text {
     padding: 10px 15px;
     width: 87%;

@@ -26,11 +26,9 @@
 </template>
 
 <script>
+  import {BlogList, SpecialContainer, TabContainer} from "~/components";
   import Carousel from "../components/widgets/carousel";
   import ImageBox from "../components/widgets/imageBox";
-  import TabContainer from "../components/containers/tabContainer";
-  import SpecialContainer from "../components/containers/specialContainer";
-  import BlogList from "../components/widgets/blogList";
   import ArticleNav from "../components/widgets/articleNav";
   export default {
     name: "leftContainer",
