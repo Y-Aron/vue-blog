@@ -14,13 +14,7 @@
       </p>
       <blockquote>
         <a href="" class="title">标题标题标题标题标题标题标题</a>
-        <p class="text">相信大家都会对Linux系统有一定程度的需求，但是目前所有Linux发行版的桌面环境实在是不太友好，
-          并不能完全满足我们所有的学习和娱乐。于是我们会想到安装Windows+Li
-          相信大家都会对Linux系统有一定程度的需求相信大家都会对Linux系统有一定程度的需求
-          相信大家都会对Linux系统有一定程度的需求
-          相信大家都会对Linux系统有一定程度的需求
-          相信大家都会对Linux系统有一定程度的需求
-        </p>
+        <p class="text">相信大家都会对Linux系统有一定程度的需求，但是目前所有Linux发行版的桌面环境实在是不太友好</p>
         <div class="meta">
           <a href="">Y-Aron1</a>
           <a href=""><i class="fa fa-eye"></i> 10</a>
@@ -51,7 +45,6 @@
         </div>
         <a href="" class="wrap-img"><img src="/images/text04.jpg" alt=""></a>
       </div>
-
     </li>
 
   </ul>
@@ -59,7 +52,14 @@
 
 <script>
 	export default {
-		name: "noteList"
+		name: "noteList",
+    data() {
+		  return {
+		    list: [{
+
+        }]
+      }
+    }
 	}
 </script>
 
@@ -74,6 +74,14 @@
     width: 186px;
     height: 100px;
     margin-top: -25px;
+  }
+  .note-list .content .title:hover{
+    text-decoration: underline;
+  }
+  .note-list .content .title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
   }
   .note-list .content {
     padding-right: 8px;

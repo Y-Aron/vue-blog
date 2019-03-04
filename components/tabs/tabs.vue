@@ -4,7 +4,7 @@
       <ul>
         <li v-for="(item, index) in tabList"
             :class="tabClass(item)" @click="handlerChange(index)"
-            v-html="item.label">
+            v-html="item.label" :style="{'width': width+'px'}">
         </li>
       </ul>
     </div>
@@ -19,6 +19,10 @@
     props: {
 		  value: {
 		    type: [String, Number]
+      },
+      width: {
+		    type: Number,
+        default: 100
       }
     },
     mounted() {
@@ -33,7 +37,7 @@
     methods: {
 		  tabClass(item) {
 		    return {
-		      'tab-label-current': item.name === this.currentValue
+		      'tab-label-active': item.name === this.currentValue
         }
       },
       handlerChange(index) {
@@ -85,3 +89,8 @@
     }
 	}
 </script>
+<style scoped>
+  .tab-label-active {
+    border-bottom: 2px solid #646464;
+  }
+</style>
