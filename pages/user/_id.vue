@@ -109,8 +109,9 @@
     width: 66.6%;
   }
   body {
-    background-color: #fff !important;
+    background-color: white;
   }
+
   .tab-labels > ul li {
     color: #969696;
     font-size: 15px;
