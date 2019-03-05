@@ -90,7 +90,27 @@
       "focus": "关注的专题/文集/连载",
       "my_like_articles": "我喜欢的文章",
       "like_articles": "喜欢的文章"
-
     }
+  },
+  "collections": {
+    "new": "新建专题",
+    "upload": "上传专题封面",
+    "name": "名称",
+    "name_pl": "填写名称，不超过50字",
+    "describe": "描述",
+    "describe_pl": "填写描述",
+    "other_admin": "其他管理员",
+    "username": "输入用户名",
+    "submission": {
+      "title": "是否允许投稿",
+      "yes": "允许",
+      "no": "不允许"
+    },
+    "check": {
+      "title": "投稿是否需要审核",
+      "yes": "需要",
+      "no": "不需要"
+    },
+    "new_btn": "创建专题"
   }
 }

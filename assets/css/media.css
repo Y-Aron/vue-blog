@@ -5,7 +5,7 @@
 .app-nav-list li.menu:before { right: 0 }
 .special-topic li { width: 25.7% }
 .app-search { width: 96%}
-.box, article { width: 96% }
+#app-container { width: 96% }
 .fader .slide img { height: 320px }
 .links li { width: 100%; text-align: left }
 .jianzhan li section { margin: 0 5px; }
@@ -19,8 +19,8 @@
 #app-nav-left { width: 100%; height: auto; background: rgba(0,0,0,0.5); margin-top: 18px; position: fixed; z-index: 999; top: 42px; }
 #app-header .app-header-search { position: absolute; top: 6px; right: 10px; }
 .app-search .search { width: 80% }
-.app-header-nav { width: 100% }
-.app-search { width: 100%; position: fixed; top: 50px; z-index: 99; background: rgba(0,0,0,.8); }
+.app-header-nav { width: 100% !important; }
+.app-search { width: 100% !important; position: fixed; top: 50px; z-index: 99; background: rgba(0,0,0,.8); }
 #app-header .logo { margin-left: 0; line-height: 56px; float: none; text-align: center; margin-right: 0; }
 #app-min-nav { overflow: hidden; position: absolute; }
 #app-min-nav { display: block; }
@@ -35,9 +35,7 @@
 .app-nav-list ul.sub li a:hover, .app-nav-list li:hover a, .app-nav-list #selected { color: #fff; }
 .app-nav-list .menu span { display: block; width: 50px; height: 50px; background: #12b7de; opacity: 0.5; position: absolute; top: 0; right: 0; border-left: #49ccea 1px solid; }
 .app-nav-list .menu:before { right: 20px; }
-/**/
-.box, article { width: 96% }
-article { padding-top: 80px; }
+#app-container { width: 96% !important;padding-top: 80px;}
 #article-nav { display: none }
 .left-container { width: 100% !important; margin-left: 0 !important; }
 .right-container { display: none }
@@ -64,6 +62,10 @@ article { padding-top: 80px; }
 .card-nav a { font-size: 12px }
 .muban li section { margin: 0 5px; height: 260px; overflow: hidden }
 .special-topic li { width: 29%; padding: 8px }
+.new-collection { margin: 0 !important;
+  padding-left: 10px;
+  width: 100% !important }
+.new-collection td { display: block;width: calc(100vw - 50px);padding: 0 0 13px!important;}
 }
 
 

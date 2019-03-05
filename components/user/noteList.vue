@@ -53,6 +53,7 @@
 <script>
 	export default {
 		name: "noteList",
+
     data() {
 		  return {
 		    list: [{

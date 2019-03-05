@@ -1,7 +1,7 @@
 <template>
-  <article>
+  <div id="app-container">
     <nuxt />
-  </article>
+  </div>
 </template>
 
 <script>

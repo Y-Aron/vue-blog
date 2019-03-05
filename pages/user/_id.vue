@@ -113,6 +113,9 @@
         if (width <= 380) { width = 380}
         document.querySelector('.tab-labels > ul').style.cssText = `width: ${width}px`
       })
+
+
+
     }
   }
 </script>
@@ -124,7 +127,9 @@
   body {
     background-color: white;
   }
-
+  .app-header-nav,.app-search,#app-container {
+    width: 960px ;
+  }
   .tab-labels > ul li {
     color: #969696;
     font-size: 15px;
