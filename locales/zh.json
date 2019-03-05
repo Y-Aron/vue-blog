@@ -72,5 +72,25 @@
       "delete": "删除",
       "new": "添加新评论"
     }
+  },
+  "userPage": {
+    "concern": "关注",
+    "fans": "粉丝",
+    "posts": "文章",
+    "words": "字数",
+    "harvest_love": "收获喜欢",
+    "defaultTabs": {
+      "post": "文章",
+      "dynamic": "动态",
+      "comment": "最新评论",
+      "hot": "热门"
+    },
+    "postTabs": {
+      "my_focus": "我关注的专题/文集/连载",
+      "focus": "关注的专题/文集/连载",
+      "my_like_articles": "我喜欢的文章",
+      "like_articles": "喜欢的文章"
+
+    }
   }
 }

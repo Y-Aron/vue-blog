@@ -149,6 +149,11 @@
     components: {ArticleNav, BlogList, SpecialContainer, TabContainer, ImageBox, Carousel},
   }
 </script>
+<style>
+  body {
+    background-color: #E9EAED;
+  }
+</style>
 
 <style>
   body {

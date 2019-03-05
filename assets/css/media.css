@@ -121,9 +121,9 @@ a.blog-item-view-more { position: static; margin-top: 20px; text-align: center }
 .fader .slide img { height: 200px; }
 .other-link li{width:100%}
 .tab-labels { overflow-x: auto !important;}
-.tab-labels ul { width: 600px;overflow-x: scroll;}
-.tab-labels li {margin-right: 30px;width: auto !important;}
-.tab-label-current:after{width:100% !important}
+.tab-labels ul { width: 480px;overflow-x: scroll;}
+.tab-labels li {padding: 0 17px;width: auto !important;}
+/*.tab-label-current:after{width:100% !important; flex: 1}*/
 }
 
 .fade-enter-active, .fade-leave-active {
