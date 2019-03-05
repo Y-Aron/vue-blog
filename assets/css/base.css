@@ -359,3 +359,24 @@ about
 .timebox li i:before { content: " "; height: 10px; width: 10px; border: 2px solid #cccaca; background: #fff; position: absolute; top: 4px; left: -26px; border-radius: 50%; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
 .timebox li:hover i:before { background: #080808 }
 .pagelist.mt20 { margin-top: 20px; }
+
+
+/*btn*/
+.btn {
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 40px;
+  background: none;
+  cursor: pointer;
+}
+.btn-hollow {
+  border: 1px solid rgba(59,194,29,.7);
+  color: #42c02e!important;
+  outline: none;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: #F8F8F8;
+}

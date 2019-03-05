@@ -54,7 +54,7 @@
       </ul>
       <div class="user-special">
         <div class="title">我创建的专题</div>
-        <a href=""><i class="fa fa-plus"></i> 创建一个新专题</a>
+        <nuxt-link to="/collections/new"><i class="fa fa-plus"></i> 创建一个新专题</nuxt-link>
         <ul class="list">
           <li><a href="" class="img"><img src="/images/author.jpg" alt=""></a> <a href="" class="name">Java架构</a></li>
           <li><a href="" class="img"><img src="/images/author.jpg" alt=""></a> <a href="" class="name">Java架构</a></li>

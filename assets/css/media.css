@@ -66,6 +66,7 @@
   padding-left: 10px;
   width: 100% !important }
 .new-collection td { display: block;width: calc(100vw - 50px);padding: 0 0 13px!important;}
+.v-modal { width: 100% !important;margin-left: -50% !important;}
 }
 
 

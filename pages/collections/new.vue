@@ -9,7 +9,7 @@
               <div class="avatar-collection"><img ref="avatar" src="/images/avatar-collection.png" alt=""></div>
             </td>
             <td>
-              <a class="upload_btn"><input type="file" @change="changeImage($event)" accept="image/*">{{$t('collections.upload')}}</a>
+              <upload-btn :value="$t('collections.upload')" @change="changeImage"/>
             </td>
           </tr>
 
@@ -67,8 +67,10 @@
 </template>
 
 <script>
-	export default {
-	  watch:  {
+	import UploadBtn from "../../components/widgets/uploadBtn";
+  export default {
+    components: {UploadBtn},
+    watch:  {
       submission(val) {
         console.log(val)
         this.disabled = !val;
@@ -90,8 +92,8 @@
       }
     },
     methods: {
-	    changeImage(e) {
-	      this.$utils.previewPicture(e.target.files, this.$refs['avatar'])
+      changeImage(e) {
+        this.$utils.previewPicture(e.target.files, this.$refs['avatar'])
       }
     },
 	  data() {
@@ -200,28 +202,7 @@
     font-size: 15px;
     color: #969696;
   }
-  .upload_btn input{
-    position: absolute;
-    display: block!important;
-    width: 82px;
-    opacity: 0;
-    padding-left: 30px;
-  }
-  .upload_btn:hover {
-    cursor: pointer;
-    background-color: #E5E6E6;
-  }
-  .upload_btn {
-    padding: 4px 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: normal;
-    border-radius: 40px;
-    background: none;
-    border: 1px solid rgba(59,194,29,.7);
-    color: #42c02e!important;
-    cursor: pointer;
-  }
+
   .avatar-collection img {
     width: 100%;
     height: 100%;

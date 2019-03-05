@@ -1,32 +1,56 @@
 <template>
-  <table>
-    <thead>
+  <div>
+    <table>
+      <thead>
       <tr>
         <td style="width: 125px"></td>
         <td></td>
       </tr>
-    </thead>
-    <tbody class="setting-base">
+      </thead>
+      <tbody class="setting-base">
       <tr>
         <td class="top-line">
           <div class="avatar">
-            <img src="/images/author.jpg" alt="">
+            <img ref="avatar" src="/images/author.jpg" alt="">
           </div>
-
         </td>
-        <td class="top-line"></td>
+        <td class="top-line">
+          <upload-btn :value="$t('settings.changePicture')" @change="changeImage"/>
+        </td>
       </tr>
+      <tr>
+        <td>昵称</td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>电子邮箱</td>
+        <td><button class="btn btn-hollow" @click="showModal=true">绑定邮箱</button></td>
+      </tr>
+      </tbody>
+    </table>
 
+    <v-modal :show="showModal" @close="showModal=false"/>
+  </div>
 
-
-    </tbody>
-  </table>
 </template>
 
 <script>
-	export default {
-		name: "basic"
-	}
+	import UploadBtn from "../widgets/uploadBtn";
+  import VModal from "../widgets/VModal";
+  export default {
+		name: "basic",
+    components: {VModal, UploadBtn},
+    data() {
+		  return {
+		    showModal: false
+      }
+    },
+    methods: {
+		  changeImage(e) {
+        this.$utils.previewPicture(e.target.files, this.$refs['avatar'])
+      }
+    }
+  }
 </script>
 
 <style scoped>

@@ -112,5 +112,9 @@
       "no": "不需要"
     },
     "new_btn": "创建专题"
+  },
+  "upload": "上传",
+  "settings": {
+    "changePicture": "更改头像"
   }
 }

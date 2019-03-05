@@ -1,11 +1,22 @@
 <template>
-    <div>blacklist</div>
+    <div>blacklist
+      <button @click="show=!show">点击</button>
+      <message :show="show" :value="'vShow'"/>
+
+    </div>
 </template>
 
 <script>
-	export default {
-		name: "blacklist"
-	}
+	import Message from "../widgets/message";
+  export default {
+		name: "blacklist",
+    components: {Message},
+    data() {
+		  return {
+		    show: true
+      }
+    }
+  }
 </script>
 
 <style scoped>

@@ -11,7 +11,7 @@
       </div>
 
       <div class="setting-container">
-        <basic v-show="target === defaultTarget[0]"/>
+        <basic v-show="target === defaultTarget[0]" />
         <profile v-show="target === defaultTarget[1]"/>
         <blacklist v-show="target === defaultTarget[2]"/>
         <misc v-show="target === defaultTarget[3]"/>
@@ -73,6 +73,16 @@
   }
   .app-settings tbody td {
     padding: 20px 0;
+    font-size: 15px;
+    color: #969696;
+  }
+  .app-settings input[type=text] {
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    background-color: hsla(0,0%,71%,.1);
+    outline: none;
   }
   .app-settings .top-line {
     padding-top: 0;
